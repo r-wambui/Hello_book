@@ -1,0 +1,51 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load staticfiles %}
+  	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" rel="stylesheet">
+	<link  href="{% static 'css/signup.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+    <form class="col s12" id="reg-form" action="/register/" method="POST">
+    {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s12">
+         <label for="{{ form.email.id_for_label }}" class="active">Email</label>
+ 			{{ form.email }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="{{ form.role.id_for_label }}" class="active">Role</label>
+ 			{{ form.role }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+
+         <label for="{{ form.password.id_for_label }}" class="active">Password</label>
+ 			{{ form.password }}
+        </div>
+      </div>
+
+        <div class="input-field col s6">
+          <button class="btn btn-large btn-register waves-effect waves-light" type="submit" value="Submit">Register
+            <i class="material-icons right">done</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
